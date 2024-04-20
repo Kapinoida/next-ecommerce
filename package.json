@@ -18,6 +18,7 @@
     "@types/node": "20.11.30",
     "@types/react": "18.2.73",
     "@types/react-dom": "18.2.23",
+    "daisyui": "^4.10.1",
     "framer-motion": "^11.0.25",
     "micro": "^10.0.1",
     "next": "14.1.4",

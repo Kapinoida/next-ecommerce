@@ -20,7 +20,7 @@ export default function Cart() {
     return (
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} onClick={() => cartStore.toggleCart()} className="fixed w-full h-screen left-0 top-0 bg-black/25">
             {/* Cart */}
-            <motion.div layout onClick={(e) => e.stopPropagation()} className="bg-white absolute right-0 top-0 w-full lg:w-2/5 h-screen p-12 overflow-y-scroll text-gray-700">
+            <motion.div layout onClick={(e) => e.stopPropagation()} className="bg-base-300 absolute right-0 top-0 w-full lg:w-2/5 h-screen p-12 overflow-y-scroll">
                 {cartStore.onCheckout === 'cart' && (
                     <button onClick={() => cartStore.toggleCart()} className="text:sm font-bold pb-12">Back to store</button>
                 )}
@@ -31,7 +31,7 @@ export default function Cart() {
                 {cartStore.onCheckout === 'cart' && (
                     <>
                         {cartStore.cart.map((item) => (
-                            <motion.div layout key={item.id} className="flex py-4 gap-4">
+                            <motion.div layout key={item.id} className="flex p-4 gap-4 bg-base-200 my-4 rounded-lg">
                                 <Image className="rounded-md h-24" src={item.image} alt={item.name} width={120} height={120}/>
                                 <motion.div layout>
                                     <h2>{item.name}</h2>
@@ -63,7 +63,7 @@ export default function Cart() {
                 {cartStore.cart.length > 0 && cartStore.onCheckout === 'cart' ? (
                     <motion.div layout>
                         <p>Total: {formatPrice(totalPrice)}</p>
-                        <button onClick={() => cartStore.setCheckout('checkout')} className="py-2 mt-4 bg-teal-700 w-full text-white rounded-md">Checkout</button>    
+                        <button onClick={() => cartStore.setCheckout('checkout')} className="py-2 mt-4 bg-primary w-full text-white rounded-md">Checkout</button>    
                     </motion.div>
                 ) : null}
                 {/* Checkout form */}

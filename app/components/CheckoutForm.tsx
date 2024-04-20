@@ -38,10 +38,10 @@ export default function CheckoutForm({clientSecret}: {clientSecret: string}) {
     }
 
     return (
-        <form className="text-gray-600" onSubmit={handleSubmit} id="payment-form">
+        <form  onSubmit={handleSubmit} id="payment-form">
             <PaymentElement id="payment-element" options={{layout: "tabs"}}/>
             <h1 className="text-sm py-4 font-bold">Total: {formattedPrice}</h1>
-            <button className={`py-2 mt-4 w-full bg-teal-700 rounded-md text-white disabled:opacity-60`} id="submit" disabled={isLoading || !stripe || !elements}>
+            <button className={`py-2 mt-4 w-full bg-primary rounded-md text-white disabled:opacity-60`} id="submit" disabled={isLoading || !stripe || !elements}>
                 <span id="button-text">
                     {isLoading ? <span>Processing</span> : <span>Pay now</span>}
                 </span>
